@@ -1,0 +1,25 @@
+{
+    "MODEL": {
+        "GENDER": "male"
+    },
+    "TRAIN": {
+        "LEARNING_RATE":2e-2,
+        "MAX_EPOCH": 5,
+        "WRITE": 1,
+        "SAVE": 10,
+        "BATCH_SIZE": 1,
+        "MOMENTUM": 0.9,
+        "lr_scheduler": {
+            "T_0": 10,
+            "T_mult": 2,
+            "eta_min": 1e-2
+        },
+        "loss_func": ""
+    },
+    "USE_GPU": 1,
+    "DATA_LOADER": {
+        "NUM_WORKERS": 1
+    },
+    "TARGET_PATH":"../Action2Motion/HumanAct12/HumanAct12/P01G01R01F0069T0143A0102.npy",
+    "DATASET_PATH":"../Action2Motion/HumanAct12/HumanAct12/"
+}

@@ -12,7 +12,8 @@ def display_model(
         ax=None,
         batch_idx=0,
         show=True,
-        savepath=None):
+        savepath=None,
+        only_joint=False):
     """
     Displays mesh batch_idx in batch of model_info, model_info as returned by
     generate_random_model
@@ -20,8 +21,7 @@ def display_model(
     if ax is None:
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
-    verts, joints = model_info['verts'][batch_idx], model_info['joints'][
-        batch_idx]
+    verts, joints = model_info['verts'][batch_idx], model_info['joints'][batch_idx]
     if model_faces is None:
         ax.scatter(verts[:, 0], verts[:, 1], verts[:, 2], alpha=0.2)
     else:
@@ -30,7 +30,8 @@ def display_model(
         edge_color = (50 / 255, 50 / 255, 50 / 255)
         mesh.set_edgecolor(edge_color)
         mesh.set_facecolor(face_color)
-        ax.add_collection3d(mesh)
+        if not only_joint:
+            ax.add_collection3d(mesh)
     if with_joints:
         draw_skeleton(joints, kintree_table=kintree_table, ax=ax)
     ax.set_xlabel('X')

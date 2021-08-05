@@ -5,13 +5,13 @@ from display_utils import display_model
 
 
 if __name__ == '__main__':
-    cuda = False
+    cuda = True
     batch_size = 1
 
     # Create the SMPL layer
     smpl_layer = SMPL_Layer(
         center_idx=0,
-        gender='neutral',
+        gender='male',
         model_root='smplpytorch/native/models')
 
     # Generate random pose and shape parameters
@@ -26,6 +26,7 @@ if __name__ == '__main__':
 
     # Forward from the SMPL layer
     verts, Jtr = smpl_layer(pose_params, th_betas=shape_params)
+    print(Jtr)
 
     # Draw output vertices and joints
     display_model(
