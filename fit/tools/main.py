@@ -26,7 +26,7 @@ from display_utils import display_model
 from smplpytorch.pytorch.smpl_layer import SMPL_Layer
 from train import train
 from transform import transform
-from save import save_pic
+from save import save_pic,save_params
 torch.backends.cudnn.benchmark=True
 
 def parse_args():
@@ -104,7 +104,7 @@ if __name__ == "__main__":
             logger.info('Processing file: {}'.format(file))
             target_path=os.path.join(root,file)
     
-            target = np.array(transform(np.load(cfg.TARGET_PATH)))
+            target = np.array(transform(np.load(target_path)))
             logger.info('File shape: {}'.format(target.shape))
             target = torch.from_numpy(target).float()
             
@@ -112,5 +112,6 @@ if __name__ == "__main__":
                 logger,writer,device,
                 args,cfg)
             
-            # save_pic(target,res,smpl_layer,file)
+            # save_pic(target,res,smpl_layer,file,logger)
+            save_params(res,file,logger)
         

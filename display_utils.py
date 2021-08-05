@@ -24,14 +24,13 @@ def display_model(
     verts, joints = model_info['verts'][batch_idx], model_info['joints'][batch_idx]
     if model_faces is None:
         ax.scatter(verts[:, 0], verts[:, 1], verts[:, 2], alpha=0.2)
-    else:
+    elif not only_joint:
         mesh = Poly3DCollection(verts[model_faces], alpha=0.2)
         face_color = (141 / 255, 184 / 255, 226 / 255)
         edge_color = (50 / 255, 50 / 255, 50 / 255)
         mesh.set_edgecolor(edge_color)
         mesh.set_facecolor(face_color)
-        if not only_joint:
-            ax.add_collection3d(mesh)
+        ax.add_collection3d(mesh)
     if with_joints:
         draw_skeleton(joints, kintree_table=kintree_table, ax=ax)
     ax.set_xlabel('X')
@@ -43,10 +42,11 @@ def display_model(
     ax.view_init(azim=-90, elev=100)
     fig.subplots_adjust(left=0, right=1, bottom=0, top=1)
     if savepath:
-        print('Saving figure at {}.'.format(savepath))
+        # print('Saving figure at {}.'.format(savepath))
         plt.savefig(savepath, bbox_inches='tight', pad_inches=0)
     if show:
         plt.show()
+    plt.close()
     return ax
 
 
