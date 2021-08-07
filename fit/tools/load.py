@@ -13,4 +13,4 @@ def load(name, path):
                     new_arr[i][j][k] = arr[j][k][i]
         return new_arr
     elif name == 'HumanAct12':
-        return np.load(path)
+        return np.load(path,allow_pickle=True)
