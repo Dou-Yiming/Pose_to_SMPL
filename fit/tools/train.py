@@ -1,32 +1,11 @@
-from fit.tools.save import save_pic
-import matplotlib as plt
-from matplotlib.pyplot import show
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
-from torch.nn.modules import module
-from torch.optim import lr_scheduler
 import torch.optim as optim
-from torch.utils.data import DataLoader
-import torchvision.datasets as dset
-import torchvision.transforms as T
-import numpy as np
-import scipy.io
-from tensorboardX import SummaryWriter
-from easydict import EasyDict as edict
-import time
-import inspect
 import sys
 import os
-import logging
 
-import argparse
-import json
 from tqdm import tqdm
 sys.path.append(os.getcwd())
-from smplpytorch.pytorch.smpl_layer import SMPL_Layer
-from display_utils import display_model
-from map import mapping
 
    
 class Early_Stop:

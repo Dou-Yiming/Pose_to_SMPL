@@ -1,16 +1,13 @@
 import torch
-import numpy as np
 from tensorboardX import SummaryWriter
 from easydict import EasyDict as edict
 import time
-import inspect
 import sys
 import os
 import logging
 
 import argparse
 import json
-from tqdm import tqdm
 sys.path.append(os.getcwd())
 from display_utils import display_model
 from smplpytorch.pytorch.smpl_layer import SMPL_Layer
