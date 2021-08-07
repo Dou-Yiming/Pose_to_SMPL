@@ -4,7 +4,7 @@
     },
     "TRAIN": {
         "LEARNING_RATE": 2e-2,
-        "MAX_EPOCH": 500,
+        "MAX_EPOCH": 10,
         "WRITE": 1
     },
     "USE_GPU": 1,

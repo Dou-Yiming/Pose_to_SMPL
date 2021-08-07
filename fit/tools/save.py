@@ -41,14 +41,10 @@ def save_params(res, file, logger, dataset_name):
     fit_path = "fit/output/{}/params/".format(dataset_name)
     create_dir_not_exist(fit_path)
     logger.info('Saving params at {}'.format(fit_path))
-    pose_params = pose_params.cpu().detach()
-    pose_params = pose_params.numpy().tolist()
-    shape_params = shape_params.cpu().detach()
-    shape_params = shape_params.numpy().tolist()
-    Jtr = Jtr.cpu().detach()
-    Jtr = Jtr.numpy().tolist()
-    verts = verts.cpu().detach()
-    verts = verts.numpy().tolist()
+    pose_params = (pose_params.cpu().detach()).numpy().tolist()
+    shape_params = (shape_params.cpu().detach()).numpy().tolist()
+    Jtr = (Jtr.cpu().detach()).numpy().tolist()
+    verts = (verts.cpu().detach()).numpy().tolist()
     params = {}
     params["pose_params"] = pose_params
     params["shape_params"] = shape_params
