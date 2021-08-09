@@ -73,7 +73,6 @@ def train(smpl_layer, target,
     
     early_stop = Early_Stop()
     for epoch in tqdm(range(cfg.TRAIN.MAX_EPOCH)):
-    # for epoch in range(cfg.TRAIN.MAX_EPOCH):
         verts, Jtr = smpl_layer(pose_params, th_betas=shape_params)
         loss = F.smooth_l1_loss(Jtr.index_select(1, index["smpl_index"]) * 100,
                                 target.index_select(1, index["dataset_index"]) * 100)

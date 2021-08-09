@@ -12,8 +12,9 @@ sys.path.append(os.getcwd())
 from smplpytorch.pytorch.smpl_layer import SMPL_Layer
 from train import train
 from transform import transform
-from save import save_params
+from save import save_pic, save_params
 from load import load
+import numpy as np
 torch.backends.cudnn.benchmark=True
 
 def parse_args():
@@ -101,6 +102,6 @@ if __name__ == "__main__":
                 logger,writer,device,
                 args,cfg)
             
-            # save_pic(res,smpl_layer,file,logger,args.dataset_name)
+            # save_pic(res,smpl_layer,file,logger,args.dataset_name,target)
             save_params(res,file,logger, args.dataset_name)
         
