@@ -12,4 +12,4 @@ image.png
 smplpytorch/native/models/*.pkl
 
 exp/
-output/*
+fit/output/*
