@@ -9,7 +9,6 @@ import logging
 import argparse
 import json
 sys.path.append(os.getcwd())
-from display_utils import display_model
 from smplpytorch.pytorch.smpl_layer import SMPL_Layer
 from train import train
 from transform import transform
@@ -25,6 +24,9 @@ def parse_args():
     parser.add_argument('--dataset_name', dest='dataset_name',
                         help='select dataset',
                         default='', type=str)
+    parser.add_argument('--dataset_path', dest='dataset_path',
+                        help='path of dataset',
+                        default=None, type=str)
     args = parser.parse_args()
     return args
 
@@ -33,6 +35,8 @@ def get_config(args):
     with open(config_path, 'r') as f:
         data = json.load(f)
     cfg = edict(data.copy())
+    if not args.dataset_path == None:
+        cfg.DATASET.PATH = args.dataset_path
     return cfg
 
 def set_device(USE_GPU):

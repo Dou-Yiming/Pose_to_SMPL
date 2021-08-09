@@ -3,11 +3,11 @@ import os
 import re
 from tqdm import tqdm
 import numpy as np
-import json
-
+import pickle
 
 sys.path.append(os.getcwd())
 from display_utils import display_model
+from label import get_label
 
 
 def create_dir_not_exist(path):
@@ -38,18 +38,19 @@ def save_pic(res, smpl_layer, file, logger, dataset_name):
 def save_params(res, file, logger, dataset_name):
     pose_params, shape_params, verts, Jtr = res
     file_name = re.split('[/.]', file)[-2]
-    fit_path = "fit/output/{}/params/".format(dataset_name)
+    fit_path = "fit/output/{}/".format(dataset_name)
     create_dir_not_exist(fit_path)
     logger.info('Saving params at {}'.format(fit_path))
+    label=get_label(file_name, dataset_name)
     pose_params = (pose_params.cpu().detach()).numpy().tolist()
     shape_params = (shape_params.cpu().detach()).numpy().tolist()
     Jtr = (Jtr.cpu().detach()).numpy().tolist()
     verts = (verts.cpu().detach()).numpy().tolist()
     params = {}
+    params["label"] = label
     params["pose_params"] = pose_params
     params["shape_params"] = shape_params
     params["Jtr"] = Jtr
-    params["mesh"] = verts
-    f = open(os.path.join((fit_path),
-                          "{}_params.json".format(file_name)), 'w')
-    json.dump(params, f)
+    with open(os.path.join((fit_path),
+                          "{}_params.pkl".format(file_name)), 'wb') as f:
+        pickle.dump(params, f)
