@@ -12,7 +12,7 @@ sys.path.append(os.getcwd())
 from smplpytorch.pytorch.smpl_layer import SMPL_Layer
 from train import train
 from transform import transform
-from save import save_pic,save_params
+from save import save_params
 from load import load
 torch.backends.cudnn.benchmark=True
 

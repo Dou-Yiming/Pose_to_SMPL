@@ -25,7 +25,7 @@ class Early_Stop:
         if delta >= self.eps:
             self.satis_num += 1
         else:
-            self.satis_num = max(0,self.satis_num-1)
+            self.satis_num = 0
         return update_res, self.satis_num >= self.stop_threshold
 
 
