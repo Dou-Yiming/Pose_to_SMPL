@@ -51,7 +51,7 @@ The SMPL human body layer for Pytorch is from the [smplpytorch](https://github.c
 
 ### 1. Executing Code
 
-You can start the fitting procedure by the following code and the configuration file in *fit/configs* corresponding to the dataset_name will be loaded:
+You can start the fitting procedure by the following code and the configuration file in *fit/configs* corresponding to the dataset_name will be loaded (the dataset_path can also be set in the configuration file):
 
 ```
 python fit/tools/main.py --dataset_name [DATASET NAME] --dataset_path [DATASET PATH]
