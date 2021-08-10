@@ -90,9 +90,11 @@ if __name__ == "__main__":
         gender=cfg.MODEL.GENDER,
         model_root='smplpytorch/native/models')
     
+    file_num = 0
     for root,dirs,files in os.walk(cfg.DATASET.PATH):
         for file in files:
-            logger.info('Processing file: {}'.format(file))
+            file_num += 1
+            logger.info('Processing file: {}   [{} / {}]'.format(file,file_num,len(files)))
             target = torch.from_numpy(transform(args.dataset_name, 
                                                 load(args.dataset_name,
                                                         os.path.join(root,file)))).float()
