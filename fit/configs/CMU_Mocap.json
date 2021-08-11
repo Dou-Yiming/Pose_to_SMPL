@@ -3,7 +3,7 @@
         "GENDER": "neutral"
     },
     "TRAIN": {
-        "LEARNING_RATE": 2e-2,
+        "LEARNING_RATE": 1e-1,
         "MAX_EPOCH": 1000,
         "WRITE": 1,
         "OPTIMIZE_SCALE":1,
