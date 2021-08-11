@@ -1166,4 +1166,7 @@ def get_label(file_name, dataset_name):
         return UTD_MHAD[key]
     elif dataset_name == 'CMU_Mocap':
         key = file_name.split('.')[0]
-        return CMU_Mocap[key]
+        if key in CMU_Mocap.keys():
+            return CMU_Mocap[key]
+        else:
+            return ""
