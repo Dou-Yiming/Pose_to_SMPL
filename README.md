@@ -43,6 +43,7 @@ The SMPL human body layer for Pytorch is from the [smplpytorch](https://github.c
     currently supported datasets:
 
     - [HumanAct12](https://ericguo5513.github.io/action-to-motion/)
+    - [CMU Mocap](https://ericguo5513.github.io/action-to-motion/)
     - [UTD-MHAD](https://personal.utdallas.edu/~kehtar/UTD-MHAD.html)
     
 - Set the **DATASET.PATH** in the corresponding configuration file to the location of dataset.

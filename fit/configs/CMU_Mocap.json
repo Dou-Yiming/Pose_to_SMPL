@@ -6,53 +6,49 @@
         "LEARNING_RATE": 2e-2,
         "MAX_EPOCH": 1000,
         "WRITE": 1,
-        "OPTIMIZE_SCALE":0,
-        "OPTIMIZE_SHAPE":1
+        "OPTIMIZE_SCALE":1,
+        "OPTIMIZE_SHAPE":0
     },
     "USE_GPU": 1,
     "DATASET": {
         "NAME": "UTD-MHAD",
-        "PATH": "../UTD-MHAD/Skeleton/Skeleton/",
+        "PATH": "../Action2Motion/CMU Mocap/mocap/mocap_3djoints/",
         "TARGET_PATH": "",
         "DATA_MAP": [
             [
-                12,
+                0,
+                0
+            ],
+            [
+                9,
                 1
             ],
             [
-                0,
-                3
+                12,
+                2
             ],
             [
-                16,
+                13,
                 4
             ],
             [
                 18,
-                5
-            ],
-            [
-                20,
                 6
             ],
             [
-                22,
+                20,
                 7
             ],
             [
-                17,
+                14,
                 8
             ],
             [
                 19,
-                9
-            ],
-            [
-                21,
                 10
             ],
             [
-                23,
+                21,
                 11
             ],
             [
@@ -68,6 +64,10 @@
                 14
             ],
             [
+                10,
+                15
+            ],
+            [
                 2,
                 16
             ],
@@ -78,6 +78,10 @@
             [
                 8,
                 18
+            ],
+            [
+                11,
+                19
             ]
         ]
     },

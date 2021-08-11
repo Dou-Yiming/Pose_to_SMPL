@@ -33,17 +33,17 @@ def save_pic(res, smpl_layer, file, logger, dataset_name,target):
             savepath=os.path.join(fit_path+"/frame_{}".format(i)),
             batch_idx=i,
             show=False,
-            only_joint=False)
-        display_model(
-            {'verts': verts.cpu().detach(),
-             'joints': target.cpu().detach()},
-            model_faces=smpl_layer.th_faces,
-            with_joints=True,
-            kintree_table=smpl_layer.kintree_table,
-            savepath=os.path.join(gt_path+"/frame_{}".format(i)),
-            batch_idx=i,
-            show=False,
             only_joint=True)
+        # display_model(
+        #     {'verts': verts.cpu().detach(),
+        #      'joints': target.cpu().detach()},
+        #     model_faces=smpl_layer.th_faces,
+        #     with_joints=True,
+        #     kintree_table=smpl_layer.kintree_table,
+        #     savepath=os.path.join(gt_path+"/frame_{}".format(i)),
+        #     batch_idx=i,
+        #     show=False,
+        #     only_joint=True)
     logger.info('Pictures saved')
 
 
