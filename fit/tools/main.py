@@ -1,5 +1,5 @@
-import numpy as np
 import torch
+import numpy as np
 from tensorboardX import SummaryWriter
 from easydict import EasyDict as edict
 import time
