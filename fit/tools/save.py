@@ -19,9 +19,9 @@ def save_pic(res, smpl_layer, file, logger, dataset_name, target):
     _, _, verts, Jtr = res
     file_name = re.split('[/.]', file)[-2]
     fit_path = "fit/output/{}/picture/fit/{}".format(dataset_name, file_name)
-    gt_path = "fit/output/{}/picture/gt/{}".format(dataset_name, file_name)
+    # gt_path = "fit/output/{}/picture/gt/{}".format(dataset_name, file_name)
     create_dir_not_exist(fit_path)
-    create_dir_not_exist(gt_path)
+    # create_dir_not_exist(gt_path)
     logger.info('Saving pictures at {}'.format(fit_path))
     for i in tqdm(range(Jtr.shape[0])):
         display_model(
@@ -32,7 +32,7 @@ def save_pic(res, smpl_layer, file, logger, dataset_name, target):
             kintree_table=smpl_layer.kintree_table,
             savepath=os.path.join(fit_path+"/frame_{}".format(i)),
             batch_idx=i,
-            show=False,
+            show=True,
             only_joint=True)
         # display_model(
         #     {'verts': verts.cpu().detach(),
@@ -59,7 +59,7 @@ def save_params(res, file, logger, dataset_name):
     Jtr = (Jtr.cpu().detach()).numpy().tolist()
     verts = (verts.cpu().detach()).numpy().tolist()
     params = {}
-    params["label"] = label
+    # params["label"] = label
     params["pose_params"] = pose_params
     params["shape_params"] = shape_params
     params["Jtr"] = Jtr

@@ -3,7 +3,8 @@ import numpy as np
 rotate = {
     'HumanAct12': [1., -1., -1.],
     'CMU_Mocap': [0.05, 0.05, 0.05],
-    'UTD_MHAD': [-1., 1., -1.]
+    'UTD_MHAD': [-1., 1., -1.],
+    'Human3.6M': [-0.001, -0.001, 0.001]
 }
 
 

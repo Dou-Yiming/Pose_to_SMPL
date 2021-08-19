@@ -4,6 +4,7 @@ import os
 import json
 import argparse
 
+
 def parse_args():
     parser = argparse.ArgumentParser(description='Detect cross joints')
     parser.add_argument('--dataset_name', dest='dataset_name',
@@ -15,9 +16,11 @@ def parse_args():
     args = parser.parse_args()
     return args
 
+
 def create_dir_not_exist(path):
     if not os.path.exists(path):
         os.mkdir(path)
+
 
 def load_Jtr(file_path):
     with open(file_path, 'rb') as f:
@@ -40,15 +43,18 @@ def cross_frames(Jtr: np.ndarray):
 
 
 def cross_detector(dir_path):
-    ans={}
+    ans = {}
     for root, dirs, files in os.walk(dir_path):
         for file in files:
             file_path = os.path.join(dir_path, file)
             Jtr = load_Jtr(file_path)
-            ans[file]=cross_frames(Jtr)
+            ans[file] = cross_frames(Jtr)
     return ans
-            
+
+
 if __name__ == "__main__":
-    args=parse_args()
-    d=cross_detector(args.output_path)
-    json.dump(d,open("./fit/output/cross_detection/{}.json".format(args.dataset_name),'w'))
+    args = parse_args()
+    d = cross_detector(args.output_path)
+    json.dump(
+        d, open("./fit/output/cross_detection/{}.json"
+                .format(args.dataset_name), 'w'))
