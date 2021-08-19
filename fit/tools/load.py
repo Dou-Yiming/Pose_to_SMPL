@@ -17,5 +17,5 @@ def load(name, path):
     elif name == "CMU_Mocap":
         return np.load(path, allow_pickle=True)
     elif name == "Human3.6M":
-        return np.load(path, allow_pickle=True)
+        return np.load(path, allow_pickle=True)[0::5] # down_sample
         
