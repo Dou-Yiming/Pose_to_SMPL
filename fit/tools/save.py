@@ -59,7 +59,7 @@ def save_params(res, file, logger, dataset_name):
     Jtr = (Jtr.cpu().detach()).numpy().tolist()
     verts = (verts.cpu().detach()).numpy().tolist()
     params = {}
-    # params["label"] = label
+    params["label"] = label
     params["pose_params"] = pose_params
     params["shape_params"] = shape_params
     params["Jtr"] = Jtr
