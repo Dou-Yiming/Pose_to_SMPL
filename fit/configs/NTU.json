@@ -7,12 +7,12 @@
         "MAX_EPOCH": 1000,
         "WRITE": 10,
         "OPTIMIZE_SCALE":0,
-        "OPTIMIZE_SHAPE":1
+        "OPTIMIZE_SHAPE":0
     },
     "USE_GPU": 1,
     "DATASET": {
         "NAME": "NTU",
-        "PATH": "../NTU RGB+D/skeleton_npy",
+        "PATH": "../NTU RGB+D/result",
         "TARGET_PATH": "",
         "DATA_MAP": [
             [
