@@ -68,8 +68,8 @@ def train(smpl_layer, target,
             break
 
         if epoch % cfg.TRAIN.WRITE == 0:
-            # logger.info("Epoch {}, lossPerBatch={:.6f}, scale={:.4f} EarlyStopSatis: {}".format(
-            #         epoch, float(loss),float(scale), early_stop.satis_num))
+            # logger.info("Epoch {}, lossPerBatch={:.6f}, scale={:.4f}".format(
+            #         epoch, float(loss),float(scale)))
             writer.add_scalar('loss', float(loss), epoch)
             writer.add_scalar('learning_rate', float(
                 optimizer.state_dict()['param_groups'][0]['lr']), epoch)

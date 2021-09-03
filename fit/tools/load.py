@@ -18,4 +18,6 @@ def load(name, path):
         return np.load(path, allow_pickle=True)
     elif name == "Human3.6M":
         return np.load(path, allow_pickle=True)[0::5] # down_sample
+    elif name == "NTU":
+        return np.load(path, allow_pickle=True)
         

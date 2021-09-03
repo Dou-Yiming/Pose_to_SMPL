@@ -114,7 +114,8 @@ if __name__ == "__main__":
             meters.reset_early_stop()
             logger.info("avg_loss:{:.4f}".format(meters.avg))
 
-            # save_pic(res,smpl_layer,file,logger,args.dataset_name,target)
             save_params(res, file, logger, args.dataset_name)
+            save_pic(res,smpl_layer,file,logger,args.dataset_name,target)
+            
             torch.cuda.empty_cache()
     logger.info("Fitting finished! Average loss:     {:.9f}".format(meters.avg))
