@@ -1,4 +1,4 @@
-pose2smpl
+Pose_to_SMPL
 =======
 
 ### Fitting SMPL Parameters by 3D-pose Key-points
