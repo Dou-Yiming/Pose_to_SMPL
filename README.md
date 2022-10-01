@@ -47,6 +47,7 @@ The SMPL human body layer for Pytorch is from the [smplpytorch](https://github.c
     - [UTD-MHAD](https://personal.utdallas.edu/~kehtar/UTD-MHAD.html)
     - [Human3.6M](http://vision.imar.ro/human3.6m/description.php)
     - [NTU](https://rose1.ntu.edu.sg/dataset/actionRecognition/)
+    - [HAA4D](https://cse.hkust.edu.hk/haa4d/dataset.html)
     
 - Set the **DATASET.PATH** in the corresponding configuration file to the location of dataset.
 

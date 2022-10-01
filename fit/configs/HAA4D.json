@@ -1,0 +1,24 @@
+{
+    "MODEL": {
+        "GENDER": "neutral"
+    },
+    "TRAIN": {
+        "LEARNING_RATE": 1e-2,
+        "MAX_EPOCH": 1000,
+        "WRITE": 10,
+        "OPTIMIZE_SCALE":1,
+        "OPTIMIZE_SHAPE":1
+    },
+    "USE_GPU": 1,
+    "DATASET": {
+        "NAME": "NTU",
+        "PATH": "../NTU RGB+D/result",
+        "TARGET_PATH": "",
+        "DATA_MAP": [
+            [0,0],[1,4],[2,1],[4,5],[5,2],[7,6],[8,3],
+            [12,9],[18,12],[19,15],[20,13],[21,16],
+            [15,10],[6,1]
+        ]
+    },
+    "DEBUG": 0
+}

@@ -1,4 +1,6 @@
 import torch
+import random
+import numpy as np
 
 from smplpytorch.pytorch.smpl_layer import SMPL_Layer
 from display_utils import display_model
@@ -15,7 +17,7 @@ if __name__ == '__main__':
         model_root='smplpytorch/native/models')
 
     # Generate random pose and shape parameters
-    pose_params = torch.rand(batch_size, 72) * 0.2
+    pose_params = torch.rand(batch_size, 72) * 0.01
     shape_params = torch.rand(batch_size, 10) * 0.03
 
     # GPU mode
@@ -26,7 +28,6 @@ if __name__ == '__main__':
 
     # Forward from the SMPL layer
     verts, Jtr = smpl_layer(pose_params, th_betas=shape_params)
-    print(Jtr)
 
     # Draw output vertices and joints
     display_model(

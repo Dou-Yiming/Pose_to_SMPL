@@ -1,3 +1,4 @@
+from xml.parsers.expat import model
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
@@ -21,7 +22,8 @@ def display_model(
     if ax is None:
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
-    verts, joints = model_info['verts'][batch_idx], model_info['joints'][batch_idx]
+    verts = model_info['verts'][batch_idx]
+    joints = model_info['joints'][batch_idx]
     if model_faces is None:
         ax.scatter(verts[:, 0], verts[:, 1], verts[:, 2], alpha=0.2)
     elif not only_joint:
