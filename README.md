@@ -76,4 +76,16 @@ python fit/tools/main.py --dataset_name [DATASET NAME] --dataset_path [DATASET P
     }
     ```
 
-    
+
+## Citation
+
+This repo is part of the [Pangea](https://mvig-rhos.com/pangea) project, if you find it useful for your research, please consider citing:
+
+```
+@article{li2023isolated,
+  title={From isolated islands to pangea: Unifying semantic space for human action understanding},
+  author={Li, Yong-Lu and Wu, Xiaoqian and Liu, Xinpeng and Dou, Yiming and Ji, Yikun and Zhang, Junyi and Li, Yixing and Tan, Jingru and Lu, Xudong and Lu, Cewu},
+  journal={arXiv preprint arXiv:2304.00553},
+  year={2023}
+}
+```
